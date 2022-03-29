@@ -1,8 +1,9 @@
+<?php
 // REFERENCES www.tutoralrepublic.com and stackoverflow.com.
 // for validating and directing users when registering in
 
 
-<?php
+
 // Include config file
 require_once "config.php";
  
