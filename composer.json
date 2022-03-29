@@ -1,8 +1,9 @@
 {
-   "post-install-cmd": [
+  "scripts": { "post-install-cmd": [
      "php artisan clear-compiled",
      "chmod -R 777 public/"
  ]
+             }
   "require" : {
     "silex/silex": "^2.0.4",
     "monolog/monolog": "^1.22",
