@@ -1,7 +1,8 @@
+<?php
 // REFERENCES www.tutoralrepublic.com and stackoverflow.com.
 // for cases where password needs to be reset.
 
-<?php
+
 session_start(); //init session
  
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) { // check if logged in a redirect if so
