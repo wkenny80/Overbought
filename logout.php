@@ -1,7 +1,8 @@
+<?php
 // REFERENCES www.tutoralrepublic.com and stackoverflow.com.
 // for validating and directing users when logging out in
 
-<?php
+
 session_start();
  
 // Unset
