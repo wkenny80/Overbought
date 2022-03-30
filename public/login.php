@@ -1,12 +1,13 @@
+
+<?php
 // REFERENCES www.tutoralrepublic.com and stackoverflow.com.
 // for validating and directing users when loggin in
 
-<?php
 session_start(); // Initialize session
  
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) { // Check if the user is already logged in
-    header("location: welcome.php"); // redirect if so
+    header("location: index.php"); // redirect if so
     exit;
 }
 
@@ -69,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // processing form data
                             $_SESSION["username"] = $username;                            
                             
                           
-                            header("location: welcome.php"); // Redirect 
+                            header("location: index.php"); // Redirect 
                         } else {
                             // Password not valid, display error message
                             $login_err = "Invalid username or password.";
