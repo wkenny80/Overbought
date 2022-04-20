@@ -1,4 +1,4 @@
-/* welcome.php CSS */
+/* index.php CSS */
 
 body, html {
     height: 100%;
@@ -16,7 +16,7 @@ body, html {
 
   .header h1 {
     font-size: 17px;
-    float: left;
+    float: right;
     margin: 20px;
     padding: 0% 30%;
     background: rgb(219, 215, 215);
@@ -53,14 +53,67 @@ body, html {
 
   div.login{
     font-size: 15px;
-    float: left;
+    float: right;
     margin: 20px;
     padding: 0% 30%;
     background: rgb(219, 215, 215);
-    width: 50%;
+    width: 100%;
+  }
+
+  input {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
   }
   
-
+  .button1 {
+    background-color: rgb(243, 242, 242); 
+    color: black;
+    font-size: 15px;
+    border: 4px solid #4CAF50;
+  }
+  .button2 {
+    background-color: rgb(243, 242, 242); 
+    color: black; 
+    font-size: 15px;
+    border: 4px solid #f44336;
+  }
+  .button3 {
+    background-color: rgb(243, 242, 242); 
+    color: black;
+    font-size: 12px;
+    border: 4px solid #4CAF50;
+    float: right;
+  }
+  .button4 {
+    background-color: rgb(243, 242, 242); 
+    color: black; 
+    font-size: 12px;
+    border: 4px solid #f44336;
+    float: right;
+  }
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .button2:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  .button3:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .button4:hover {
+    background-color: #f44336;
+    color: white;
+  }
   a.l1 {
     background-color: rgb(255, 0, 64);
     color: rgb(255, 255, 255);
@@ -165,7 +218,7 @@ body, html {
       border-collapse: separate;
       margin-top: 100px;
       padding: 20px;
-      width: 33%;
+      width: 60%;
       table-layout: auto;
       float: center;
       margin: 20px;
@@ -186,8 +239,36 @@ body, html {
     padding: 4px 8px;
   }
 
+  /* table 5 */
+  table.table5 {
+    border: 1px solid rgba(204, 204, 204, 0);
+    border-collapse: separate;
+    margin-top: 100px;
+    padding: 20px;
+    width: 33%;
+    table-layout: auto;
+    float: center;
+    margin: 20px;
+  }
+  table.table5 thead tr {
+    color:rgb(0, 0, 0);
+  }
+
+  table.table5 tr {
+    background: rgb(0, 0, 0);
+    border: 1px solid rgba(221, 221, 221, 0);
+  }
+
+table.table5 th,
+table.table5 td {
+  text-align: left;
+  border: solid rgb(0, 0, 0) 1px;
+  padding: 4px 8px;
+}
+
   footer {
     font-size: 17px;
     float: left;
   }
+
 
