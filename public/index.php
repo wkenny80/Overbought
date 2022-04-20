@@ -261,7 +261,7 @@ echo "</table>";
   <?php
       
 
-    $dao = new Dao();
+   $dao = new Dao();
     if (empty($dao->getFav($_SESSION['username']))) {
         echo "<table class=table4>";
           echo "<tr>";
@@ -269,15 +269,33 @@ echo "</table>";
           echo "</tr>";
         echo "</table>";
     } else {
-        $favor[] = $dao->getFav($_SESSION['username']);
-            echo "<table class=table4>";
-        foreach ($favor as $rows) {
-          echo "<tr>";
-          echo "<td>" . htmlspecialchars($rows["fav_coin"]) . "</td>";
-          echo "</tr>";
-        }
-        echo "</table>";
+        $favor = $dao->getFav($_SESSION['username']);
 
+        foreach ($favor as $rows) {
+          $newf[] = $rows['fav_coin'];
+        }
+        echo "<table class=table4>";
+        if (in_array("Ethereum (ETH)", $newf)) {
+          echo "<tr>";
+          echo "<td>" . "Ethereum (ETH)" . "</td>";
+          echo "</tr>";
+          }
+         if (in_array("Chainlink (LINK)", $newf)) {
+          echo "<tr>";
+          echo "<td>" . "Chainlink (LINK)" . "</td>";
+          echo "</tr>";
+          }
+         if (in_array("Litecoin (LTC)", $newf)) {
+          echo "<tr>";
+          echo "<td>" . "Litecoin (LTC)" . "</td>";
+          echo "</tr>";
+          }
+         if (in_array("Solana (SOL)", $newf)) {
+          echo "<tr>";
+          echo "<td>" . "Solana (SOL)" . "</td>";
+          echo "</tr>";
+          }
+          echo "</table>";
     }
     ?>
       </div>
