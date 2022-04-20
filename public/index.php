@@ -4,6 +4,7 @@
 // REFERENCES www.tutoralrepublic.com and stackoverflow.com.
 // Initialize the session
 session_start();
+ 
 // Check if the user is logged in
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -17,6 +18,21 @@ require_once 'Dao.php';
 <head>
   <link rel="stylesheet" href="styl.css">
   <link rel="icon" type="image/gif" href="/images/fav.gif">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script>
+$().ready(function() {
+  
+  $("input").click(function(e){
+    
+    var options = {};
+    var rowId = $(this).attr("data-id");
+    var $row = $("#"+rowId);
+    $row.fadeOut(500,function() {
+        $row.fadeIn('slow');
+    });
+  });
+});
+</script>
 </head>
 <body>
 
@@ -27,11 +43,21 @@ require_once 'Dao.php';
    
   </div>
 
+  <?php
+      if(isset($_POST['button10'])) {
+        header("location: logout.php");
+      }
+      if(isset($_POST['button11'])) {
+        header("location: reset-password.php");
+      }
+      ?>
+
   <div class="login">
-  <p>
-        <a href="reset-password.php" class="l1">Reset Your Password</a>
-        <a href="logout.php" class="l2">Sign Out of Your Account</a>
-    </p>
+ 
+  <input class="button4" type="submit" name="button10"
+                value="Logout"/>
+  <input class="button3" type="submit" name="button10"
+                value="Reset Your Password"/>
   </div>
 
   
@@ -151,6 +177,8 @@ echo "</table>";
   </div>
   
   <div id="Coins" class="tabcontent">
+  
+
   <?php
       if(isset($_POST['button1'])) {
         $ether = "Ethereum (ETH)";
@@ -202,50 +230,51 @@ echo "</table>";
       </tr>
       <tr>
         <td>Ethereum (ETH)</td>
-        <td>
-        <input type="submit" name="button1"
+
+          <td id="row1">
+        <input class="button1" type="submit" data-id="row1" name="button1"
                 value="Add to Favorites"/> 
         </td>
-        <td>
-        <input type="submit" name="button5"
+        <td id="row2">
+        <input class="button2" type="submit" data-id="row2" name="button5"
                 value="Remove from Favorites"/> 
         </td>
       </tr>
       <tr>
         <td>Chainlink (LINK)</td>
-        <td>
-        <input type="submit" name="button2"
+        <td id="row3">
+        <input class="button1" type="submit" data-id="row3" name="button2"
                 value="Add to Favorites"/>
           
         </td>
-        <td>
-        <input type="submit" name="button6"
+        <td id="row4">
+        <input class="button2" type="submit" data-id="row4" name="button6"
                 value="Remove from Favorites"/> 
         </td>
       
       </tr>
       <tr>
         <td>Litecoin (LTC)</td>
-        <td>
-        <input type="submit" name="button3"
+        <td id="row5">
+        <input class="button1" type="submit" data-id="row5" name="button3"
                 value="Add to Favorites"/>
           
         </td>
-        <td>
-        <input type="submit" name="button7"
+        <td id="row6">
+        <input class="button2" type="submit" data-id="row6" name="button7"
                 value="Remove from Favorites"/> 
         </td>
       
       </tr>
       <tr>
         <td>Solana (SOL)</td>
-        <td>
-        <input type="submit" name="button4"
+        <td id="row7">
+        <input class="button1" type="submit" data-id="row7" name="button4"
                 value="Add to Favorites"/>
           
         </td>
-        <td>
-        <input type="submit" name="button8"
+        <td id="row8">
+        <input class="button2" type="submit" data-id="row8" name="button8"
                 value="Remove from Favorites"/> 
         </td>
       
@@ -260,9 +289,9 @@ echo "</table>";
   <?php
       
 
-   $dao = new Dao();
+    $dao = new Dao();
     if (empty($dao->getFav($_SESSION['username']))) {
-        echo "<table class=table4>";
+        echo "<table class=table5>";
           echo "<tr>";
           echo "<td>" . "No Favorites selected" . "</td>";
           echo "</tr>";
@@ -273,7 +302,7 @@ echo "</table>";
         foreach ($favor as $rows) {
           $newf[] = $rows['fav_coin'];
         }
-        echo "<table class=table4>";
+        echo "<table class=table5>";
         if (in_array("Ethereum (ETH)", $newf)) {
           echo "<tr>";
           echo "<td>" . "Ethereum (ETH)" . "</td>";
@@ -322,6 +351,5 @@ echo "</table>";
 </body>
 <footer>
   <p>Author: William Kenny</p>
-  <p><a href="williamkenny80@gmail.com">williamkenny80@gmail.com</a></p>
 </footer>
 </html>
