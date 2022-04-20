@@ -19,6 +19,8 @@ require_once 'Dao.php';
   <link rel="stylesheet" href="styl.css">
   <link rel="icon" type="image/gif" href="/images/fav.gif">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
+  
   <script>
 $().ready(function() {
   
