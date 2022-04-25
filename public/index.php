@@ -45,22 +45,13 @@ $().ready(function() {
    
   </div>
 
-  <?php
-      if(isset($_POST['button10'])) {
-        header("location: logout.php");
-      }
-      if(isset($_POST['button11'])) {
-        header("location: reset-password.php");
-      }
-      ?>
-
-  <div class="login">
- 
-  <input class="button4" type="submit" name="button10"
-                value="Logout"/>
-  <input class="button3" type="submit" name="button10"
-                value="Reset Your Password"/>
+   <div class="login">
+  <p>
+        <a href="reset-password.php" class="l1">Reset Your Password</a>
+        <a href="logout.php" class="l2">Sign Out of Your Account</a>
+    </p>
   </div>
+
 
   
 
